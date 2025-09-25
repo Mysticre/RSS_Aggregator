@@ -1,3 +1,5 @@
+-- name: GetPosts :one
+
 INSERT INTO posts (
     id,
     created_at,
@@ -17,3 +19,13 @@ INSERT INTO posts (
 )
 
 RETURNING * ;
+
+
+-- name: JoinAndGetPostsAsUser :one
+
+SELECT * FROM posts
+Join feed_follows ON Posts.feed_id = feed_follows.feed_id
+WHERE feed_follows.user_id = $1
+ORDER BY posts.updated_at DESC 
+LIMIT $2 ; 
+
