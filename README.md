@@ -20,7 +20,6 @@
 ## 安裝與執行
 
 1. Clone 專案
-   git clone git@github.com:你的帳號/RSS_Aggregator.git
    cd RSS_Aggregator
 
 2. 初始化模組
