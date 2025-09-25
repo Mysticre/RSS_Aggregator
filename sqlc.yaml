@@ -1,0 +1,11 @@
+#  Yaml功能：就是設定檔，讓工具/程式能讀取設定。因為它可讀性高、結構清楚、支援複雜設定，而且被各種工具標準化採用。
+
+version: "2"
+sql:
+  - engine: "postgresql" # 告訴 sqlc 要用 PostgreSQL、MySQL 還是 SQLite
+    schema: "sql/schema" # 找到這裡的schema/ 定義（建立 table 的 SQL）
+    queries: "sql/queries" # 把queries/這裡的SQL拿來轉程式碼
+    gen:
+      go:
+        package: "database" #產生的 Go code 用 package db
+        out: "internal/database" #  產生後放到 internal/db/
