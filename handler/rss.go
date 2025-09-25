@@ -30,11 +30,6 @@ type RSSItem struct {
 function進去或出來的都是copy
 struct在內部或是外部被構造出來
 
-
-
-
-
-
 */
 
 func FetchRSSURLtoFeed(url string) (RSSFeed, error) {
