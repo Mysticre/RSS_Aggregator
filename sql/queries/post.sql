@@ -23,7 +23,7 @@ RETURNING * ;
 
 -- name: JoinAndGetPostsAsUser :one
 
-SELECT * FROM posts
+SELECT post* FROM posts
 Join feed_follows ON Posts.feed_id = feed_follows.feed_id
 WHERE feed_follows.user_id = $1
 ORDER BY posts.updated_at DESC 
